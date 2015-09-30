@@ -33,6 +33,9 @@ g++ lex.yy.c calc2.tab.c
 
 # fix variable assignments to allow for expressions * (only works with semicolon)
 
+# make language case insensitive 
+# get rid of terminating character
+
 
 
 

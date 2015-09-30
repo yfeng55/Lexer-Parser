@@ -52,7 +52,7 @@ expr : expr PLUS expr                   { $$ = $1 + $3; }
      ;
 
 
-declare : INT VARIABLE SEMICOLON                 { printf("variable declaration\n"); 
+declare : INT VARIABLE                 { printf("variable declaration\n"); 
                                                      if(vars.find($2) == vars.end()){
                                                         vars[$2] = 0; 
                                                         printf("%d", vars[$2]);
@@ -61,7 +61,7 @@ declare : INT VARIABLE SEMICOLON                 { printf("variable declaration\
                                                      }
                                                    }
 
-        | VARIABLE EQUALS expr SEMICOLON        { printf("variable assignment\n"); 
+        | VARIABLE EQUALS expr        { printf("variable assignment\n"); 
 
                                                   if(vars.find($1) == vars.end()){
                                                     yyerror("variable has not been declared yet -- terminating");
@@ -74,7 +74,9 @@ declare : INT VARIABLE SEMICOLON                 { printf("variable declaration\
         ;
 
 
-print : PRINT VARIABLE                 { printf("%d", vars[$2]); }
+print : PRINT VARIABLE                 {  printf("\n\n"); 
+                                          printf($2);
+                                          printf(" is %d \n\n", vars[$2]); }
 
 %%
 
