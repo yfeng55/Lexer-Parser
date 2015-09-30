@@ -438,7 +438,7 @@ static const yytype_int8 yyrhs[] =
 static const yytype_uint8 yyrline[] =
 {
        0,    37,    37,    38,    41,    42,    43,    46,    47,    48,
-      49,    50,    51,    52,    56,    57,    58,    61,    62
+      49,    50,    51,    52,    56,    57,    68,    71,    72
 };
 #endif
 
@@ -1375,22 +1375,31 @@ yyreduce:
 
   case 15:
 #line 57 "calc2.y"
-    { printf("variable declaration\n"); vars[(yyvsp[(2) - (2)].str_val)] = 0; printf("%d", vars[(yyvsp[(2) - (2)].str_val)]);;}
+    { printf("variable declaration\n"); 
+                                         
+                                         if(vars.find((yyvsp[(2) - (2)].str_val)) == vars.end()){
+                                            vars[(yyvsp[(2) - (2)].str_val)] = 0; 
+                                            printf("%d", vars[(yyvsp[(2) - (2)].str_val)]);
+                                         }else{
+                                            printf("WARNING: variable has already been assigned\n");
+                                         }
+
+                                       ;}
     break;
 
   case 16:
-#line 58 "calc2.y"
+#line 68 "calc2.y"
     { printf("variable assignment\n"); vars[(yyvsp[(1) - (3)].str_val)] = (yyvsp[(3) - (3)].val); printf("%d", vars[(yyvsp[(1) - (3)].str_val)]);;}
     break;
 
   case 18:
-#line 62 "calc2.y"
+#line 72 "calc2.y"
     { printf("%d", vars[(yyvsp[(2) - (2)].str_val)]); ;}
     break;
 
 
 /* Line 1267 of yacc.c.  */
-#line 1394 "calc2.tab.c"
+#line 1403 "calc2.tab.c"
       default: break;
     }
   YY_SYMBOL_PRINT ("-> $$ =", yyr1[yyn], &yyval, &yyloc);
@@ -1604,7 +1613,7 @@ yyreturn:
 }
 
 
-#line 64 "calc2.y"
+#line 74 "calc2.y"
 
 
 
