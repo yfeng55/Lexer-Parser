@@ -1,0 +1,2 @@
+///* This is error test 2: Error on comments
+*/

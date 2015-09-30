@@ -1,0 +1,9 @@
+/*
+ Basic Test */
+
+int x
+int y
+x = 1 + 2 + 3
+y = x * 2 + 20
+print y
+//Should print "y is 32"

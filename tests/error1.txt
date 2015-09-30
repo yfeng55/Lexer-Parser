@@ -1,0 +1,9 @@
+/*
+  This is error test 1: One statement per line
+*/
+
+int x
+int y
+
+x = 1 y = 2
+//Should panic

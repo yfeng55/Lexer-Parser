@@ -1,0 +1,12 @@
+/*
+  This is error test2: Unclosed comment
+*/
+
+int x
+int y
+
+x = 1
+y = x * 10 + 5
+
+/*
+  This is unclosed comment, should panic
