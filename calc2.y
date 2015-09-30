@@ -1,8 +1,12 @@
 %{
 #include <iostream>
 #include <string>    
+#include <map>
+#include <cstdlib>>
 
 using namespace std;
+
+map<string,int> vars;
 
 int yylex();
 int yyerror(const char *p) { std::cerr << "error: " << p << std::endl; };
@@ -50,7 +54,7 @@ expr :
 
 
 declare : 
-       | INT VARIABLE                 { printf("variable declaration"); }
+       | INT VARIABLE                 { printf("variable declaration\n"); vars[$2] = 0; printf("%d", vars[$2]);}
        ;
 
 assign :

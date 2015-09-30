@@ -98,8 +98,12 @@
 
 #include <iostream>
 #include <string>    
+#include <map>
+#include <cstdlib>>
 
 using namespace std;
+
+map<string,int> vars;
 
 int yylex();
 int yyerror(const char *p) { std::cerr << "error: " << p << std::endl; };
@@ -125,13 +129,13 @@ int yyerror(const char *p) { std::cerr << "error: " << p << std::endl; };
 
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
 typedef union YYSTYPE
-#line 11 "calc2.y"
+#line 15 "calc2.y"
 {
     int val;
     char* str_val;
 }
 /* Line 193 of yacc.c.  */
-#line 135 "calc2.tab.c"
+#line 139 "calc2.tab.c"
 	YYSTYPE;
 # define yystype YYSTYPE /* obsolescent; will be withdrawn */
 # define YYSTYPE_IS_DECLARED 1
@@ -144,7 +148,7 @@ typedef union YYSTYPE
 
 
 /* Line 216 of yacc.c.  */
-#line 148 "calc2.tab.c"
+#line 152 "calc2.tab.c"
 
 #ifdef short
 # undef short
@@ -431,8 +435,8 @@ static const yytype_int8 yyrhs[] =
 /* YYRLINE[YYN] -- source line where rule number YYN was defined.  */
 static const yytype_uint8 yyrline[] =
 {
-       0,    34,    34,    35,    38,    39,    40,    42,    43,    44,
-      45,    46,    47,    48,    52,    53,    56,    57
+       0,    38,    38,    39,    42,    43,    44,    46,    47,    48,
+      49,    50,    51,    52,    56,    57,    60,    61
 };
 #endif
 
@@ -1343,43 +1347,43 @@ yyreduce:
   switch (yyn)
     {
         case 8:
-#line 43 "calc2.y"
+#line 47 "calc2.y"
     { (yyval.val) = (yyvsp[(1) - (3)].val) + (yyvsp[(3) - (3)].val); ;}
     break;
 
   case 9:
-#line 44 "calc2.y"
+#line 48 "calc2.y"
     { (yyval.val) = (yyvsp[(1) - (3)].val) - (yyvsp[(3) - (3)].val); ;}
     break;
 
   case 10:
-#line 45 "calc2.y"
+#line 49 "calc2.y"
     { (yyval.val) = (yyvsp[(1) - (3)].val) * (yyvsp[(3) - (3)].val); ;}
     break;
 
   case 11:
-#line 46 "calc2.y"
+#line 50 "calc2.y"
     { (yyval.val) = (yyvsp[(1) - (3)].val) / (yyvsp[(3) - (3)].val); ;}
     break;
 
   case 13:
-#line 48 "calc2.y"
+#line 52 "calc2.y"
     { (yyval.val) = (yyvsp[(2) - (3)].val); ;}
     break;
 
   case 15:
-#line 53 "calc2.y"
-    { printf("variable declaration"); ;}
+#line 57 "calc2.y"
+    { printf("variable declaration\n"); vars[(yyvsp[(2) - (2)].str_val)] = 55; printf("%d", vars[(yyvsp[(2) - (2)].str_val)]);;}
     break;
 
   case 17:
-#line 57 "calc2.y"
+#line 61 "calc2.y"
     { printf("variable assignment"); ;}
     break;
 
 
 /* Line 1267 of yacc.c.  */
-#line 1383 "calc2.tab.c"
+#line 1387 "calc2.tab.c"
       default: break;
     }
   YY_SYMBOL_PRINT ("-> $$ =", yyr1[yyn], &yyval, &yyloc);
@@ -1593,7 +1597,7 @@ yyreturn:
 }
 
 
-#line 61 "calc2.y"
+#line 65 "calc2.y"
 
 
 

@@ -23,5 +23,14 @@ g++ lex.yy.c $1.tab.c
 
 # allow program to accept multiple commands (include recursive grammar rule for root) ***
 
+# store declared variables in a hashmap ***
 
-# store declared variables in a hashmap
+
+
+
+
+# modify variable values using assignment statements 
+
+# implement print command 
+
+
