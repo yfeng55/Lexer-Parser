@@ -24,7 +24,6 @@ int yyerror(const char *p) { std::cerr << "error: " << p << std::endl; };
 
 %type <val> expr
 %type <val> commands
-%type <val> assign
 
 %start prog
 
@@ -41,7 +40,7 @@ prog :
 
 commands : expr
          | declare
-         | assign
+
 
 expr : 
      | expr PLUS expr                   { $$ = $1 + $3; }
@@ -55,10 +54,7 @@ expr :
 
 declare : 
        | INT VARIABLE                 { printf("variable declaration\n"); vars[$2] = 0; printf("%d", vars[$2]);}
-       ;
-
-assign :
-       | VARIABLE EQUALS expr         { printf("variable assignment"); }
+       | VARIABLE EQUALS NUM          { printf("variable assignment\n"); vars[$1] = $3; printf("%d", vars[$1]);}
        ;
 
 
