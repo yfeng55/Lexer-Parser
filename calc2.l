@@ -25,6 +25,7 @@ using namespace std;
 "/"                     { return DIV; }
 "("                     { return LPAREN; }
 ")"                     { return RPAREN; }
+"="						{ return EQUALS; }
 
 "//".*					{}
 "/*"((?:.|\n)*?)"*/"	{}
