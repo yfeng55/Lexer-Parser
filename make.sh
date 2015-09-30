@@ -31,6 +31,13 @@ g++ lex.yy.c calc2.tab.c
 
 
 
+# fix variable assignments to allow for expressions * (only works with semicolon)
 
-# fix variable assignments to allow for expressions 
+
+
+
+
+# QUESTIONS:
+# why does assigning an expression throw a syntax error? (without semicolon)
+
 

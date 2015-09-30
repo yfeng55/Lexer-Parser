@@ -27,6 +27,8 @@ using namespace std;
 "("                     { return LPAREN; }
 ")"                     { return RPAREN; }
 "="						{ return EQUALS; }
+";"						{ return SEMICOLON; }
+
 
 "//".*					{}
 "/*"((?:.|\n)*?)"*/"	{}

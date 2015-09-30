@@ -18,7 +18,7 @@ int yyerror(const char *p) { std::cerr << "error: " << p << std::endl; };
 };
 
 
-%token LPAREN RPAREN PLUS MINUS MUL DIV INT EQUALS PRINT
+%token LPAREN RPAREN PLUS MINUS MUL DIV INT EQUALS PRINT SEMICOLON
 %token <val> NUM
 %token <str_val> VARIABLE
 
@@ -34,7 +34,7 @@ int yyerror(const char *p) { std::cerr << "error: " << p << std::endl; };
 
 %%
 
-prog : 
+prog : commands
      | prog commands
      ;
 
@@ -43,8 +43,7 @@ commands : expr
          | print
          ;
 
-expr :
-     | expr PLUS expr                   { $$ = $1 + $3; }
+expr : expr PLUS expr                   { $$ = $1 + $3; }
      | expr MINUS expr                  { $$ = $1 - $3; }
      | expr MUL expr                    { $$ = $1 * $3; }
      | expr DIV expr                    { $$ = $1 / $3; }
@@ -53,23 +52,29 @@ expr :
      ;
 
 
-declare : 
-        | INT VARIABLE                 { printf("variable declaration\n"); 
-                                         
-                                         if(vars.find($2) == vars.end()){
-                                            vars[$2] = 0; 
-                                            printf("%d", vars[$2]);
-                                         }else{
-                                            printf("WARNING: variable has already been assigned\n");
-                                         }
+declare : INT VARIABLE SEMICOLON                 { printf("variable declaration\n"); 
+                                                     if(vars.find($2) == vars.end()){
+                                                        vars[$2] = 0; 
+                                                        printf("%d", vars[$2]);
+                                                     }else{
+                                                        printf("WARNING: variable has already been assigned\n");
+                                                     }
+                                                   }
 
-                                       }
+        | VARIABLE EQUALS expr SEMICOLON        { printf("variable assignment\n"); 
 
-        | VARIABLE EQUALS NUM          { printf("variable assignment\n"); vars[$1] = $3; printf("%d", vars[$1]);}
+                                                  if(vars.find($1) == vars.end()){
+                                                    yyerror("variable has not been declared yet -- terminating");
+                                                    exit(0);
+                                                  }else{
+                                                    vars[$1] = $3;
+                                                  }
+                                                  printf("%d", vars[$1]);
+                                                }
         ;
 
-print :
-      | PRINT VARIABLE                 { printf("%d", vars[$2]); }
+
+print : PRINT VARIABLE                 { printf("%d", vars[$2]); }
 
 %%
 
