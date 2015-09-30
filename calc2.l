@@ -31,7 +31,7 @@ using namespace std;
 
 
 "//".*					{}
-"/*"((?:.|\n)*?)"*/"	{}
+"/*"((\*+[^/*])|([^*]))*\**"*/"	{}
 
 [ \t\r\n]+              { /* Ignore white characters. */ }
 .                       { std::cerr << "Invalid token" << std::endl; exit(1); }

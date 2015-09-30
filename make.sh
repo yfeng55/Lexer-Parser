@@ -28,13 +28,15 @@ g++ lex.yy.c calc2.tab.c
 
 # implement print command ***
 
-
-
 # fix variable assignments to allow for expressions ***
 
+# fix nested comments ***
 
 
-# allow 
+
+
+
+# print error for multiline commands 
 
 # make language case insensitive  
 
