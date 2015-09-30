@@ -16,6 +16,7 @@ using namespace std;
                            calc2.y with the %union directive. */
 
 "int"					{ return INT; }
+"print"					{ return PRINT; }
 
 [0-9]+                  { yylval.val = atoi(yytext); return NUM; }
 [a-zA-Z0-9]{1,15} 		{ yylval.str_val = strdup(yytext); return VARIABLE; }

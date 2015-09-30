@@ -47,8 +47,9 @@
      DIV = 263,
      INT = 264,
      EQUALS = 265,
-     NUM = 266,
-     VARIABLE = 267
+     PRINT = 266,
+     NUM = 267,
+     VARIABLE = 268
    };
 #endif
 /* Tokens.  */
@@ -60,8 +61,9 @@
 #define DIV 263
 #define INT 264
 #define EQUALS 265
-#define NUM 266
-#define VARIABLE 267
+#define PRINT 266
+#define NUM 267
+#define VARIABLE 268
 
 
 
@@ -74,7 +76,7 @@ typedef union YYSTYPE
     char* str_val;
 }
 /* Line 1529 of yacc.c.  */
-#line 78 "calc2.tab.h"
+#line 80 "calc2.tab.h"
 	YYSTYPE;
 # define yystype YYSTYPE /* obsolescent; will be withdrawn */
 # define YYSTYPE_IS_DECLARED 1

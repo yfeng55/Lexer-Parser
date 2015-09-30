@@ -18,7 +18,7 @@ int yyerror(const char *p) { std::cerr << "error: " << p << std::endl; };
 };
 
 
-%token LPAREN RPAREN PLUS MINUS MUL DIV INT EQUALS
+%token LPAREN RPAREN PLUS MINUS MUL DIV INT EQUALS PRINT
 %token <val> NUM
 %token <str_val> VARIABLE
 
@@ -40,6 +40,7 @@ prog :
 
 commands : expr
          | declare
+         | print
 
 
 expr : 
@@ -53,10 +54,12 @@ expr :
 
 
 declare : 
-       | INT VARIABLE                 { printf("variable declaration\n"); vars[$2] = 0; printf("%d", vars[$2]);}
-       | VARIABLE EQUALS NUM          { printf("variable assignment\n"); vars[$1] = $3; printf("%d", vars[$1]);}
-       ;
+        | INT VARIABLE                 { printf("variable declaration\n"); vars[$2] = 0; printf("%d", vars[$2]);}
+        | VARIABLE EQUALS NUM          { printf("variable assignment\n"); vars[$1] = $3; printf("%d", vars[$1]);}
+        ;
 
+print :
+      | PRINT VARIABLE                 { printf("%d", vars[$2]); }
 
 %%
 
