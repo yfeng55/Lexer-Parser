@@ -48,6 +48,14 @@ expr : expr PLUS expr                   { $$ = $1 + $3; }
      | expr MUL expr                    { $$ = $1 * $3; }
      | expr DIV expr                    { $$ = $1 / $3; }
      | NUM                              /* default action: { $$ = $1; } */
+     | VARIABLE                         { if(vars.find($1) == vars.end()){
+                                            yyerror("variable has not been declared yet -- terminating");
+                                            exit(0);
+                                          }else{
+                                            $$ = vars[$1];
+                                          }
+                                        }
+                                        
      | LPAREN expr RPAREN               { $$ = $2; }
      ;
 

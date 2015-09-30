@@ -1,7 +1,5 @@
 #!/bin/sh
 
-# rm lex.yy.c $1.tab.h $1.tab.c a.out
-
 if [ ! -f calc2.y -o ! -f calc2.l ] ; then
   echo No target.
   exit
@@ -10,6 +8,7 @@ fi
 bison -d calc2.y
 flex calc2.l
 g++ lex.yy.c calc2.tab.c
+# rm lex.yy.c $1.tab.h $1.tab.c a.out
 
 
 
@@ -31,16 +30,19 @@ g++ lex.yy.c calc2.tab.c
 
 
 
-# fix variable assignments to allow for expressions * (only works with semicolon)
-
-# make language case insensitive 
-# get rid of terminating character
+# fix variable assignments to allow for expressions ***
 
 
 
+# allow 
+
+# make language case insensitive  
+
+
+# ------------------------------------------------------
 
 
 # QUESTIONS:
-# why does assigning an expression throw a syntax error? (without semicolon)
+
 
 
