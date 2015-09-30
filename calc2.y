@@ -31,11 +31,12 @@ int yyerror(const char *p) { std::cerr << "error: " << p << std::endl; };
 
 %%
 
-prog : commands                         { std::cout << $1 << std::endl; }
+prog : 
+     | prog commands
      ;
 
-commands : expr                         { }
-         | assign                       { }
+commands : expr
+         | assign
 
 expr : expr PLUS expr                   { $$ = $1 + $3; }
      | expr MINUS expr                  { $$ = $1 - $3; }
@@ -46,7 +47,8 @@ expr : expr PLUS expr                   { $$ = $1 + $3; }
      ;
 
 
-assign : INT VARIABLE                 { printf("variable assignment"); }
+assign : 
+       | INT VARIABLE                 { printf("variable assignment"); }
        ;
 
 

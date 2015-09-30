@@ -18,7 +18,7 @@ using namespace std;
 "int"					{ return INT; }
 
 [0-9]+                  { yylval.val = atoi(yytext); return NUM; }
-[a-zA-Z][a-zA-Z0-9]* 	{ yylval.str_val = strdup(yytext); return VARIABLE; }
+[a-zA-Z][a-zA-Z0-9]{0,15} 	{ yylval.str_val = strdup(yytext); return VARIABLE; }
 "+"                     { return PLUS; }
 "-"                     { return MINUS; }
 "*"                     { return MUL; }
