@@ -18,7 +18,7 @@ int yyerror(const char *p) { std::cerr << "error: " << p << std::endl; };
 };
 
 
-%token LPAREN RPAREN PLUS MINUS MUL DIV INT EQUALS PRINT SEMICOLON
+%token LPAREN RPAREN PLUS MINUS MUL DIV INT EQUALS PRINT SEMICOLON NEWLINE
 %token <val> NUM
 %token <str_val> VARIABLE
 
@@ -34,8 +34,10 @@ int yyerror(const char *p) { std::cerr << "error: " << p << std::endl; };
 
 %%
 
-prog : commands
-     | prog commands
+prog : commands NEWLINE
+     | prog commands NEWLINE
+     | NEWLINE
+     | prog NEWLINE
      ;
 
 commands : expr
@@ -60,16 +62,16 @@ expr : expr PLUS expr                   { $$ = $1 + $3; }
      ;
 
 
-declare : INT VARIABLE                 { printf("variable declaration\n"); 
+declare : INT VARIABLE                 {              /*printf("variable declaration\n");*/
                                                      if(vars.find($2) == vars.end()){
                                                         vars[$2] = 0; 
-                                                        printf("%d", vars[$2]);
+                                                        /*printf("%d", vars[$2]);*/
                                                      }else{
                                                         printf("WARNING: variable has already been assigned\n");
                                                      }
                                                    }
 
-        | VARIABLE EQUALS expr        { printf("variable assignment\n"); 
+        | VARIABLE EQUALS expr        {           /*printf("variable assignment\n"); */
 
                                                   if(vars.find($1) == vars.end()){
                                                     yyerror("variable has not been declared yet -- terminating");
@@ -77,7 +79,7 @@ declare : INT VARIABLE                 { printf("variable declaration\n");
                                                   }else{
                                                     vars[$1] = $3;
                                                   }
-                                                  printf("%d", vars[$1]);
+                                                  /*printf("%d", vars[$1]);*/
                                                 }
         ;
 

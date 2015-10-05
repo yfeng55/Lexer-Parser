@@ -49,8 +49,9 @@
      EQUALS = 265,
      PRINT = 266,
      SEMICOLON = 267,
-     NUM = 268,
-     VARIABLE = 269
+     NEWLINE = 268,
+     NUM = 269,
+     VARIABLE = 270
    };
 #endif
 /* Tokens.  */
@@ -64,8 +65,9 @@
 #define EQUALS 265
 #define PRINT 266
 #define SEMICOLON 267
-#define NUM 268
-#define VARIABLE 269
+#define NEWLINE 268
+#define NUM 269
+#define VARIABLE 270
 
 
 
@@ -78,7 +80,7 @@ typedef union YYSTYPE
     char* str_val;
 }
 /* Line 1529 of yacc.c.  */
-#line 82 "calc2.tab.h"
+#line 84 "calc2.tab.h"
 	YYSTYPE;
 # define yystype YYSTYPE /* obsolescent; will be withdrawn */
 # define YYSTYPE_IS_DECLARED 1

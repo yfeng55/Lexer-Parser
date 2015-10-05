@@ -363,8 +363,8 @@ static void yy_fatal_error (yyconst char msg[]  );
 	*yy_cp = '\0'; \
 	(yy_c_buf_p) = yy_cp;
 
-#define YY_NUM_RULES 17
-#define YY_END_OF_BUFFER 18
+#define YY_NUM_RULES 18
+#define YY_END_OF_BUFFER 19
 /* This struct is not used in this scanner,
    but its presence is necessary. */
 struct yy_trans_info
@@ -374,10 +374,10 @@ struct yy_trans_info
 	};
 static yyconst flex_int16_t yy_accept[62] =
     {   0,
-        0,    0,   18,   16,   15,   15,    9,   10,    7,    5,
-        6,    8,    3,   12,   11,    4,    4,    4,   15,    0,
-       13,    3,    4,    4,    4,    0,    0,   13,    3,    4,
-        1,    4,   14,    3,    4,    4,    3,    4,    2,    3,
+        0,    0,   19,   17,   16,   13,    9,   10,    7,    5,
+        6,    8,    3,   12,   11,    4,    4,    4,   16,    0,
+       14,    3,    4,    4,    4,    0,    0,   14,    3,    4,
+        1,    4,   15,    3,    4,    4,    3,    4,    2,    3,
         4,    3,    4,    3,    4,    3,    4,    3,    4,    3,
         4,    3,    4,    3,    4,    3,    4,    3,    4,    3,
         0
@@ -423,14 +423,14 @@ static yyconst flex_int32_t yy_meta[19] =
 
 static yyconst flex_int16_t yy_base[78] =
     {   0,
-        0,    0,   72,   73,   17,   19,   73,   73,   73,   73,
-       73,   17,   61,   73,   73,    0,   55,   52,   22,   62,
-        0,   57,    0,   48,   51,   58,   21,    0,   53,    0,
-        0,   47,   73,   51,    0,   42,   49,    0,    0,   48,
-        0,   47,    0,   46,    0,   45,    0,   44,    0,   43,
-        0,   42,    0,   41,    0,   40,    0,   39,   73,   38,
-       73,   44,   30,   33,   43,   42,   41,   40,   39,   38,
-       37,   36,   35,   34,   32,   26,   25
+        0,    0,   68,   69,   65,   69,   69,   69,   69,   69,
+       69,   13,   56,   69,   69,    0,   50,   47,   61,   56,
+        0,   51,    0,   42,   45,   52,   14,    0,   47,    0,
+        0,   41,   69,   45,    0,   36,   43,    0,    0,   42,
+        0,   41,    0,   40,    0,   39,    0,   38,    0,   37,
+        0,   36,    0,   35,    0,   34,    0,   33,   69,   32,
+       69,   38,   23,   26,   37,   36,   35,   34,   33,   32,
+       31,   30,   29,   28,   27,   25,   18
     } ;
 
 static yyconst flex_int16_t yy_def[78] =
@@ -445,34 +445,30 @@ static yyconst flex_int16_t yy_def[78] =
        61,   61,   61,   61,   61,   61,   61
     } ;
 
-static yyconst flex_int16_t yy_nxt[92] =
+static yyconst flex_int16_t yy_nxt[88] =
     {   0,
         4,    5,    6,    7,    8,    9,   10,   11,   12,   13,
-       14,   15,   16,   17,   16,   18,   16,   16,   19,   19,
-       19,   19,   20,   19,   19,   21,   27,   59,   57,   33,
-       26,   26,   26,   28,   55,   28,   53,   51,   49,   47,
-       45,   43,   41,   38,   35,   30,   23,   60,   60,   58,
-       56,   54,   52,   50,   48,   46,   44,   42,   40,   39,
-       37,   36,   34,   27,   32,   31,   29,   27,   25,   24,
-       22,   61,    3,   61,   61,   61,   61,   61,   61,   61,
+       14,   15,   16,   17,   16,   18,   16,   16,   20,   27,
+       59,   21,   33,   26,   26,   26,   28,   57,   28,   55,
+       53,   51,   49,   47,   45,   43,   41,   38,   35,   30,
+       23,   60,   60,   58,   56,   54,   52,   50,   48,   46,
+       44,   42,   40,   39,   37,   36,   34,   27,   32,   31,
+       29,   27,   19,   25,   24,   22,   19,   61,    3,   61,
        61,   61,   61,   61,   61,   61,   61,   61,   61,   61,
-       61
-
+       61,   61,   61,   61,   61,   61,   61
     } ;
 
-static yyconst flex_int16_t yy_chk[92] =
+static yyconst flex_int16_t yy_chk[88] =
     {   0,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
-        1,    1,    1,    1,    1,    1,    1,    1,    5,    5,
-        6,    6,   12,   19,   19,   12,   27,   77,   76,   27,
-       63,   63,   63,   64,   75,   64,   74,   73,   72,   71,
-       70,   69,   68,   67,   66,   65,   62,   60,   58,   56,
-       54,   52,   50,   48,   46,   44,   42,   40,   37,   36,
-       34,   32,   29,   26,   25,   24,   22,   20,   18,   17,
-       13,    3,   61,   61,   61,   61,   61,   61,   61,   61,
+        1,    1,    1,    1,    1,    1,    1,    1,   12,   27,
+       77,   12,   27,   63,   63,   63,   64,   76,   64,   75,
+       74,   73,   72,   71,   70,   69,   68,   67,   66,   65,
+       62,   60,   58,   56,   54,   52,   50,   48,   46,   44,
+       42,   40,   37,   36,   34,   32,   29,   26,   25,   24,
+       22,   20,   19,   18,   17,   13,    5,    3,   61,   61,
        61,   61,   61,   61,   61,   61,   61,   61,   61,   61,
-       61
-
+       61,   61,   61,   61,   61,   61,   61
     } ;
 
 static yy_state_type yy_last_accepting_state;
@@ -498,7 +494,7 @@ char *yytext;
 using namespace std;
 
 #include "calc2.tab.h"  /* We want the tokens defined in calc2.y. */
-#line 502 "lex.yy.c"
+#line 498 "lex.yy.c"
 
 #define INITIAL 0
 
@@ -686,7 +682,7 @@ YY_DECL
                         /* 'val' in 'yylval.val' is the field declared in
                            calc2.y with the %union directive. */
 
-#line 690 "lex.yy.c"
+#line 686 "lex.yy.c"
 
 	if ( !(yy_init) )
 		{
@@ -745,7 +741,7 @@ yy_match:
 			yy_current_state = yy_nxt[yy_base[yy_current_state] + (unsigned int) yy_c];
 			++yy_cp;
 			}
-		while ( yy_base[yy_current_state] != 73 );
+		while ( yy_base[yy_current_state] != 69 );
 
 yy_find_action:
 		yy_act = yy_accept[yy_current_state];
@@ -830,12 +826,12 @@ YY_RULE_SETUP
 { return SEMICOLON; }
 	YY_BREAK
 case 13:
+/* rule 13 can match eol */
 YY_RULE_SETUP
-#line 33 "calc2.l"
-{}
+#line 31 "calc2.l"
+{ return NEWLINE; }
 	YY_BREAK
 case 14:
-/* rule 14 can match eol */
 YY_RULE_SETUP
 #line 34 "calc2.l"
 {}
@@ -843,20 +839,25 @@ YY_RULE_SETUP
 case 15:
 /* rule 15 can match eol */
 YY_RULE_SETUP
-#line 36 "calc2.l"
-{ /* Ignore white characters. */ }
+#line 35 "calc2.l"
+{}
 	YY_BREAK
 case 16:
 YY_RULE_SETUP
 #line 37 "calc2.l"
-{ std::cerr << "Invalid token" << std::endl; exit(1); }
+{ /* Ignore white characters. */ }
 	YY_BREAK
 case 17:
+YY_RULE_SETUP
+#line 38 "calc2.l"
+{ std::cerr << "Invalid token" << std::endl; exit(1); }
+	YY_BREAK
+case 18:
 YY_RULE_SETUP
 #line 41 "calc2.l"
 ECHO;
 	YY_BREAK
-#line 860 "lex.yy.c"
+#line 861 "lex.yy.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 

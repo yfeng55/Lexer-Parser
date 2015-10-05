@@ -28,14 +28,14 @@ using namespace std;
 ")"                     { return RPAREN; }
 "="						{ return EQUALS; }
 ";"						{ return SEMICOLON; }
+"\n"					{ return NEWLINE; }
 
 
 "//".*					{}
 "/*"((\*+[^/*])|([^*]))*\**"*/"	{}
 
-[ \t\r\n]+              { /* Ignore white characters. */ }
+[ \t\r]+              { /* Ignore white characters. */ }
 .                       { std::cerr << "Invalid token" << std::endl; exit(1); }
-
 
 
 %%

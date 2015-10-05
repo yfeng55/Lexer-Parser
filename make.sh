@@ -36,10 +36,11 @@ g++ lex.yy.c calc2.tab.c
 
 
 
-# print error for multiline commands 
+# print error for multiline commands (error1.txt)
 
 # make language case insensitive  
 
+# remove excess printf() statements
 
 # ------------------------------------------------------
 
