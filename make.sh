@@ -32,20 +32,10 @@ g++ lex.yy.c calc2.tab.c
 
 # fix nested comments ***
 
+# print error for multiline commands (error1.txt) ***
 
 
-
-
-# print error for multiline commands (error1.txt)
 
 # make language case insensitive  
-
-# remove excess printf() statements
-
-# ------------------------------------------------------
-
-
-# QUESTIONS:
-
 
 
